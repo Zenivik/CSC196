@@ -14,6 +14,7 @@ void Game::Initialize()
 	engine->Get<nc::AudioSystem>()->AddAudio("explosion", "explosion.wav");
 	engine->Get<nc::AudioSystem>()->AddAudio("player_fire", "player_fire.wav");
 	engine->Get<nc::AudioSystem>()->AddAudio("enemy_fire", "Laser_Shoot.wav");
+	engine->Get<nc::AudioSystem>()->AddAudio("Music", "BGM.mp3");
 
 
 	engine->Get<nc::EventSystem>()->Subscribe("AddPoints", std::bind(&Game::OnAddPoints, this, std::placeholders::_1));
@@ -40,6 +41,7 @@ void Game::Update(float dt)
 		}
 		break;
 	case Game::eState::StartGame:
+		scene->engine->Get<nc::AudioSystem>()->PlayAudio("Music");
 		score = 0;
 		health = 200;
 		lives = 3;
@@ -84,6 +86,7 @@ void Game::Update(float dt)
 	case Game::eState::GameOver:
 		if (Core::Input::IsPressed(VK_SPACE))
 		{
+			scene->RemoveAllActors();
 			state = eState::StartGame;
 		}
 		break;

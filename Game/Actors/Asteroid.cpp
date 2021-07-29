@@ -37,11 +37,13 @@ void Asteroid::OnCollision(Actor* actor)
 	if (dynamic_cast<Projectile*>(actor) && actor->tag == "Enemy")
 	{
 		actor->destroy = true;
+		this->destroy = true;
 	}
 
 	if (dynamic_cast<Projectile*>(actor) && actor->tag == "Player")
 	{
 		actor->destroy = true;
+		this->destroy = true;
 	}
 
 }
