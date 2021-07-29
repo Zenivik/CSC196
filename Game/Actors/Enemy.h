@@ -8,10 +8,10 @@ public:
 
 	void Update(float dt) override;
 
-	virtual void OnCollision(Actor* actor) override;
+	void OnCollision(Actor* actor) override;
 
 private:
-	float speed = 300;
+	float speed = 100;
 	float fireTimer = 0;
-	float fireRate = 1;
+	float fireRate = 2;
 };

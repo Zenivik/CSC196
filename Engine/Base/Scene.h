@@ -18,6 +18,7 @@ namespace nc
 		void Draw(Core::Graphics& graphics);
 
 		void AddActor(std::unique_ptr<Actor> actor);
+		void RemoveActor(Actor* actor);
 		void RemoveAllActors();
 
 		template<typename T>

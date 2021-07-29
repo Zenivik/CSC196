@@ -53,8 +53,14 @@ namespace nc
 	void Scene::AddActor(std::unique_ptr<Actor> actor)
 	{
 		actor->scene = this;
+		actor->Initialize();
 
 		newActors.push_back(std::move(actor));
+	}
+
+	void Scene::RemoveActor(Actor* actor)
+	{
+
 	}
 
 	void Scene::RemoveAllActors()

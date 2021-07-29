@@ -33,7 +33,11 @@ public:
 private:
 	eState state = eState::Title;
 	float stateTimer = 0.0f;
+	float gameTimer = 0.0f;
+	float spawnTimer = 0;
+	float spawnRate = 0;
 
 	size_t score = 0;
+	size_t health = 0;
 	size_t lives = 0;
 };

@@ -8,12 +8,12 @@ namespace nc
 	struct Transform
 	{
 		Vector2 position;
-		float rotation;
-		Vector2 scale;
+		float rotation = 0;
+		Vector2 scale{ 1, 1 };
 
 		Vector2 localPosition;
-		float localRotation ;
-		Vector2 localScale ;
+		float localRotation = 0;
+		Vector2 localScale = { 1, 1 };
 
 		Matrix33 matrix;
 
